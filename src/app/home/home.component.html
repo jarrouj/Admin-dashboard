@@ -1,34 +1,121 @@
+<div class="mt-6 flex justify-center gap-6">
 
-
-<div class="mt-6 flex justify-center">
-
-  <ion-card>
+  <!-- Card 1: Users -->
+  <ion-card class="w-55 min-h-[70px] bg-blue-500 text-white rounded-xl shadow-md">
     <ion-card-header>
-      <ion-card-subtitle>Number of Users</ion-card-subtitle>
+      <ion-card-subtitle class="flex justify-center items-center text-xl font-semibold text-white">Number of Users : </ion-card-subtitle>
     </ion-card-header>
-
-    <ion-card-content>
+    <ion-card-content class="flex justify-center items-center text-2xl">
       10
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
+  <!-- Card 2: Products -->
+  <ion-card class="w-55 min-h-[70px] bg-green-500 text-white rounded-xl shadow-md">
     <ion-card-header>
-      <ion-card-subtitle>Number of Products</ion-card-subtitle>
+      <ion-card-subtitle class="flex justify-center items-center text-xl font-semibold text-white">Number of Products : </ion-card-subtitle>
     </ion-card-header>
-
-    <ion-card-content>
+    <ion-card-content class="flex justify-center items-center text-2xl">
       10
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
+  <!-- Card 3: Orders -->
+  <ion-card class="w-55 min-h-[70px] bg-red-500 text-white rounded-xl shadow-md">
     <ion-card-header>
-      <ion-card-subtitle>Number of Orders</ion-card-subtitle>
+      <ion-card-subtitle class="flex justify-center items-center text-xl font-semibold text-white">Number of Orders : </ion-card-subtitle>
     </ion-card-header>
-
-    <ion-card-content>
+    <ion-card-content class="flex justify-center items-center  text-2xl">
       10
     </ion-card-content>
   </ion-card>
+
 </div>
+
+
+
+<ion-header class="mt-22">
+  <ion-toolbar>
+    <ion-title class="flex justify-center">Product List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="overflow-x-auto p-4">
+    <table class="min-w-full bg-black border border-gray-300 rounded-lg shadow-lg">
+      <thead>
+        <tr class="bg-blue-500 text-white">
+          <th class="px-4 py-2 text-left">Product</th>
+          <th class="px-4 py-2 text-left">Price</th>
+          <th class="px-4 py-2 text-left">Quantity</th>
+          <th class="px-4 py-2 text-left">Total</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="hover:bg-gray-100">
+          <td class="px-4 py-2">Apple</td>
+          <td class="px-4 py-2">$1.00</td>
+          <td class="px-4 py-2">10</td>
+          <td class="px-4 py-2">$10.00</td>
+        </tr>
+        <tr class="hover:bg-gray-100">
+          <td class="px-4 py-2">Banana</td>
+          <td class="px-4 py-2">$0.50</td>
+          <td class="px-4 py-2">20</td>
+          <td class="px-4 py-2">$10.00</td>
+        </tr>
+        <tr class="hover:bg-gray-100">
+          <td class="px-4 py-2">Orange</td>
+          <td class="px-4 py-2">$0.75</td>
+          <td class="px-4 py-2">15</td>
+          <td class="px-4 py-2">$11.25</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ion-content>
+
+
+
+<ion-header >
+  <ion-toolbar>
+    <ion-title class="flex justify-center">Order List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="overflow-x-auto p-4">
+    <table class="min-w-full bg-black border border-gray-300 rounded-lg shadow-lg">
+      <thead>
+        <tr class="bg-blue-500 text-white">
+          <th class="px-4 py-2 text-left">Product</th>
+          <th class="px-4 py-2 text-left">Price</th>
+          <th class="px-4 py-2 text-left">Quantity</th>
+          <th class="px-4 py-2 text-left">Total</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="hover:bg-gray-100">
+          <td class="px-4 py-2">Apple</td>
+          <td class="px-4 py-2">$1.00</td>
+          <td class="px-4 py-2">10</td>
+          <td class="px-4 py-2">$10.00</td>
+        </tr>
+        <tr class="hover:bg-gray-100">
+          <td class="px-4 py-2">Banana</td>
+          <td class="px-4 py-2">$0.50</td>
+          <td class="px-4 py-2">20</td>
+          <td class="px-4 py-2">$10.00</td>
+        </tr>
+        <tr class="hover:bg-gray-100">
+          <td class="px-4 py-2">Orange</td>
+          <td class="px-4 py-2">$0.75</td>
+          <td class="px-4 py-2">15</td>
+          <td class="px-4 py-2">$11.25</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ion-content>
