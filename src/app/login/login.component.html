@@ -1,1 +1,18 @@
-<p>login works!</p>
+<div>
+  <h2>Login</h2>
+  <form >
+    <label for="email">Email:</label>
+    <input type="email" [(ngModel)]="email" name="email" required />
+    <br />
+    <label for="password">Password:</label>
+    <input
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+      required
+    />
+    <br />
+    <button type="submit" (click)="onLogin()">Login</button>
+  </form>
+  <p *ngIf="loginFailed" style="color: red;">Invalid credentials</p>
+</div>
