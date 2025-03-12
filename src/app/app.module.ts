@@ -10,12 +10,14 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { IonRouterOutlet } from '@ionic/angular/common';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    HomeComponent,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
