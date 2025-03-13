@@ -1,0 +1,28 @@
+<div class="overflow-x-auto p-4">
+  <table class="min-w-full bg-black border border-gray-300 rounded-lg shadow-lg">
+    <thead>
+      <tr class="bg-blue-500 text-white">
+        <th class="px-4 py-2 text-left">Order ID</th>
+        <th class="px-4 py-2 text-left">Product ID</th>
+        <th class="px-4 py-2 text-left">Quantity</th>
+        <th class="px-4 py-2 text-left">Total Price</th>
+        <th class="px-4 py-2 text-left">Status</th>
+        <th class="px-4 py-2 text-left">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td class="px-4 py-2">{{ order.id }}</td>
+        <td class="px-4 py-2">{{ order.ProductsId }}</td>
+        <td class="px-4 py-2">{{ order.quantity }}</td>
+        <td class="px-4 py-2">${{ order.TotalPrice }}</td>
+        <td class="px-4 py-2">{{ order.Status }}</td>
+        <td class="px-4 py-2">
+          <button (click)="updateStatus(order.id, 'Shipped')" class="action-button bg-yellow-500 text-white py-1 px-2 rounded-full hover:bg-yellow-600">Mark as Shipped</button>
+          <button (click)="updateStatus(order.id, 'Canceled')" class="action-button bg-red-500 text-white py-1 px-2 rounded-full hover:bg-red-600 ml-2">Cancel Order</button>
+          <button (click)="deleteOrder(order.id)" class="action-button bg-gray-500 text-white py-1 px-2 rounded-full hover:bg-gray-600 ml-2">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

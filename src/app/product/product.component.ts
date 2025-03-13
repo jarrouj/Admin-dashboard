@@ -7,7 +7,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss'],
-  imports: [FormsModule, CommonModule],
+  standalone: true,
+  imports: [FormsModule, CommonModule   ],
 })
 export class ProductComponent implements OnInit {
   isDropdownOpen = false;  // For Add Product form visibility

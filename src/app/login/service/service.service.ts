@@ -43,4 +43,7 @@ export class ServiceService {
   getCurrentUser(): string | null {
     return this.currentUserEmail;
   }
+  getUsersCount(): number {
+    return this.users.length;
+  }
 }

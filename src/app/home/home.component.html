@@ -7,7 +7,7 @@
       </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content class="flex justify-center items-center text-2xl">
-      10
+      {{ totalUsers }}
     </ion-card-content>
   </ion-card>
 
@@ -18,7 +18,7 @@
       </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content class="flex justify-center items-center text-2xl">
-      10
+      {{ products.length }}
     </ion-card-content>
   </ion-card>
 
@@ -29,7 +29,7 @@
       </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content class="flex justify-center items-center  text-2xl">
-      10
+      {{ totalOrders }}
     </ion-card-content>
   </ion-card>
 
@@ -73,31 +73,27 @@
     <table class="min-w-full bg-black border border-gray-300 rounded-lg shadow-lg">
       <thead>
         <tr class="bg-blue-500 text-white">
-          <th class="px-4 py-2 text-left">Order</th>
+          <th class="px-4 py-2 text-left">Order ID</th>
+          <th class="px-4 py-2 text-left">Product Name</th>
           <th class="px-4 py-2 text-left">Price</th>
           <th class="px-4 py-2 text-left">Quantity</th>
-          <th class="px-4 py-2 text-left">Total</th>
+          <th class="px-4 py-2 text-left">Total Price</th>
+          <th class="px-4 py-2 text-left">Status</th>
         </tr>
       </thead>
 
       <tbody>
-        <tr>
-          <td class="px-4 py-2">Apple</td>
-          <td class="px-4 py-2">$1.00</td>
-          <td class="px-4 py-2">10</td>
-          <td class="px-4 py-2">$10.00</td>
-        </tr>
-        <tr>
-          <td class="px-4 py-2">Banana</td>
-          <td class="px-4 py-2">$0.50</td>
-          <td class="px-4 py-2">20</td>
-          <td class="px-4 py-2">$10.00</td>
-        </tr>
-        <tr>
-          <td class="px-4 py-2">Orange</td>
-          <td class="px-4 py-2">$0.75</td>
-          <td class="px-4 py-2">15</td>
-          <td class="px-4 py-2">$11.25</td>
+        <tr *ngFor="let order of orders">
+          <td class="px-4 py-2">{{ order.id }}</td>
+          <td class="px-4 py-2">
+            {{ getProductById(order.ProductsId)?.name }}
+          </td>
+          <td class="px-4 py-2">
+            ${{ getProductById(order.ProductsId)?.price }}
+          </td>
+          <td class="px-4 py-2">{{ order.quantity }}</td>
+          <td class="px-4 py-2">${{ calculateOrderTotal(order) }}</td>
+          <td class="px-4 py-2">{{ order.Status }}</td>
         </tr>
       </tbody>
     </table>
