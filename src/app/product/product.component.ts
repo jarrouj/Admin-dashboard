@@ -39,7 +39,7 @@ export class ProductComponent implements OnInit {
       if (this.isEditMode && this.editingProduct) {
         // Update the product
         const updatedProduct: Product = {
-          id: this.editingProduct.id,  // Keep the same ID
+          id: this.editingProduct.id, 
           name: this.productName,
           description: this.description,
           image: this.image,
@@ -47,7 +47,7 @@ export class ProductComponent implements OnInit {
           price: this.price!,
         };
         this.productService.updateProduct(updatedProduct);
-        this.isEditMode = false;  // Switch off edit mode
+        this.isEditMode = false;
       } else {
         // Add new product
         const newProduct: Product = {
@@ -60,7 +60,7 @@ export class ProductComponent implements OnInit {
         };
         this.productService.addProduct(newProduct);
       }
-      this.products = this.productService.getProducts();  // Refresh the list
+      this.products = this.productService.getProducts();
       this.clearForm();
       this.toggleDropdown();
     } else {
@@ -78,22 +78,28 @@ export class ProductComponent implements OnInit {
   }
 
   editProduct(product: Product) {
-    this.isEditMode = true;  // Switch to edit mode
-    this.editingProduct = product;  // Store the product being edited
+    this.isEditMode = true;
+    this.editingProduct = product;
 
-    // Populate the form with the existing product details
     this.productName = product.name;
     this.description = product.description;
     this.image = product.image;
     this.quantity = product.quantity;
     this.price = product.price;
 
-    // Open the dropdown form in edit mode
     this.isDropdownOpen = true;
   }
 
   deleteProduct(id: number) {
     this.productService.deleteProduct(id);
-    this.products = this.productService.getProducts();  // Refresh the list
+    this.products = this.productService.getProducts();
   }
+
+  confirmDelete(productId: number): void {
+    const isConfirmed = window.confirm('Are you sure you want to delete this product?');
+    if (isConfirmed) {
+      this.deleteProduct(productId);
+    }
+  }
+
 }
