@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { IonRouterOutlet } from '@ionic/angular/common';
 import { HomeComponent } from './home/home.component';
+// import { ProductService } from './products/service/product.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { HomeComponent } from './home/home.component';
     IonicModule.forRoot({})
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
   ],
   bootstrap: [AppComponent]
 })

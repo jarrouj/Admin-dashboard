@@ -1,18 +1,42 @@
+import { Component, OnInit, OnChanges } from '@angular/core';
+import { ServiceService } from '../login/service/service.service';
+import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { IonContent, IonHeader, IonTitle, IonToolbar   } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar , RouterModule  , CommonModule],
+  imports: [RouterLink , CommonModule],
 })
-export class HeaderComponent  implements OnInit {
+export class HeaderComponent implements OnInit, OnChanges {
+  currentUserEmail: string | null = null;
+  isDropdownOpen = false;
 
-  constructor() { }
+  constructor(private service: ServiceService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.updateUserState();
+  }
 
+  ngOnChanges() {
+    this.updateUserState();
+  }
+
+  updateUserState() {
+    this.currentUserEmail = this.service.getCurrentUser();
+  }
+
+  isAuthenticated(): boolean {
+    return this.service.isAuthenticated();
+  }
+
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  logout(): void {
+    this.service.logout();
+    this.updateUserState();
+  }
 }
