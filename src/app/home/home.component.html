@@ -3,7 +3,8 @@
   <!-- Card 1: Users -->
   <ion-card class="w-55 min-h-[70px] bg-blue-500 text-white rounded-xl shadow-md">
     <ion-card-header>
-      <ion-card-subtitle class="flex justify-center items-center text-xl font-semibold text-white">Number of Users : </ion-card-subtitle>
+      <ion-card-subtitle class="flex justify-center items-center text-xl font-semibold text-white">Number of Users :
+      </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content class="flex justify-center items-center text-2xl">
       10
@@ -13,7 +14,8 @@
   <!-- Card 2: Products -->
   <ion-card class="w-55 min-h-[70px] bg-green-500 text-white rounded-xl shadow-md">
     <ion-card-header>
-      <ion-card-subtitle class="flex justify-center items-center text-xl font-semibold text-white">Number of Products : </ion-card-subtitle>
+      <ion-card-subtitle class="flex justify-center items-center text-xl font-semibold text-white">Number of Products :
+      </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content class="flex justify-center items-center text-2xl">
       10
@@ -23,7 +25,8 @@
   <!-- Card 3: Orders -->
   <ion-card class="w-55 min-h-[70px] bg-red-500 text-white rounded-xl shadow-md">
     <ion-card-header>
-      <ion-card-subtitle class="flex justify-center items-center text-xl font-semibold text-white">Number of Orders : </ion-card-subtitle>
+      <ion-card-subtitle class="flex justify-center items-center text-xl font-semibold text-white">Number of Orders :
+      </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content class="flex justify-center items-center  text-2xl">
       10
@@ -53,23 +56,11 @@
       </thead>
 
       <tbody>
-        <tr >
-          <td class="px-4 py-2">Apple</td>
-          <td class="px-4 py-2">$1.00</td>
-          <td class="px-4 py-2">10</td>
-          <td class="px-4 py-2">$10.00</td>
-        </tr>
-        <tr >
-          <td class="px-4 py-2">Banana</td>
-          <td class="px-4 py-2">$0.50</td>
-          <td class="px-4 py-2">20</td>
-          <td class="px-4 py-2">$10.00</td>
-        </tr>
-        <tr >
-          <td class="px-4 py-2">Orange</td>
-          <td class="px-4 py-2">$0.75</td>
-          <td class="px-4 py-2">15</td>
-          <td class="px-4 py-2">$11.25</td>
+        <tr *ngFor="let product of products">
+          <td class="px-4 py-2">{{ product.name }}</td>
+          <td class="px-4 py-2">${{ product.price }}</td>
+          <td class="px-4 py-2">{{ product.quantity }}</td>
+          <td class="px-4 py-2">${{ calculateTotal(product) }}</td>
         </tr>
       </tbody>
     </table>
@@ -90,19 +81,19 @@
       </thead>
 
       <tbody>
-        <tr >
+        <tr>
           <td class="px-4 py-2">Apple</td>
           <td class="px-4 py-2">$1.00</td>
           <td class="px-4 py-2">10</td>
           <td class="px-4 py-2">$10.00</td>
         </tr>
-        <tr >
+        <tr>
           <td class="px-4 py-2">Banana</td>
           <td class="px-4 py-2">$0.50</td>
           <td class="px-4 py-2">20</td>
           <td class="px-4 py-2">$10.00</td>
         </tr>
-        <tr >
+        <tr>
           <td class="px-4 py-2">Orange</td>
           <td class="px-4 py-2">$0.75</td>
           <td class="px-4 py-2">15</td>
@@ -112,6 +103,3 @@
     </table>
   </div>
 </ion-content>
-
-
-

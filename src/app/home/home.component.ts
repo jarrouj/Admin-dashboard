@@ -1,17 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicModule } from '@ionic/angular';  // Import IonicModule to access all Ionic components
+import { IonicModule } from '@ionic/angular';
+import { Product, ProductsService } from '../product/products.service';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  standalone: true, 
-  imports: [IonicModule],
+  standalone: true,
+  imports: [IonicModule , CommonModule],
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  products: Product[] = [];
 
-  ngOnInit() {}
+  constructor(private productService: ProductsService) {}
 
+  ngOnInit() {
+    this.products = this.productService.getProducts();
+  }
+
+  calculateTotal(product: Product): number {
+    return product.price * product.quantity;
+  }
 }
