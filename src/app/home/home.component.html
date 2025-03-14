@@ -60,7 +60,7 @@
         <tr *ngFor="let product of products">
           <td class="px-4 py-2">{{ product.name }}</td>
           <td class="px-4 py-2"><img [src]="product.image" alt="Product Image"
-            class="w-16 h-16 object-cover rounded-md"></td>
+              class="w-16 h-16 object-cover rounded-md"></td>
           <td class="px-4 py-2">${{ product.price }}</td>
           <td class="px-4 py-2">{{ product.quantity }}</td>
           <td class="px-4 py-2">${{ calculateTotal(product) }}</td>
@@ -101,4 +101,12 @@
       </tbody>
     </table>
   </div>
+
+  <!-- <div class="mt-10">
+    <div class="chart-container">
+      <canvas id="MyChart"></canvas>
+    </div>
+  </div> -->
+
+
 </ion-content>

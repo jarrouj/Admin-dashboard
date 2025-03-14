@@ -13,7 +13,11 @@ import { IonRouterOutlet } from '@ionic/angular/common';
 import { HomeComponent } from './home/home.component';
 import { ProductsService } from './product/products.service';
 import { ProductComponent } from './product/product.component';
+import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 // import { ProductService } from './products/service/product.service';
+// import { NgChartsModule } from 'ng2-charts';
+
+
 
 @NgModule({
   declarations: [
@@ -31,9 +35,12 @@ import { ProductComponent } from './product/product.component';
     HeaderComponent,
     IonicModule.forRoot({}),
     ProductComponent,
+    // NgChartsModule
+
   ],
   providers: [
     provideClientHydration(withEventReplay()),
+    provideCharts(withDefaultRegisterables()),
   ],
   bootstrap: [AppComponent]
 })
